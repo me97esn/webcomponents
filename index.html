@@ -4,6 +4,7 @@
 	<title></title>
 	<script type="text/javascript">
 	'use strict'
+
 	let proto = Object.create(HTMLElement.prototype);
 	proto.name = 'Custom Element';
 	
@@ -12,19 +13,19 @@
 
 	  this.innerHTML = `
 	  <div>
-	  hi!
+	  hi ${this.attributes.name.value}!
 	  </div>
 	  `
 	};
 
-
-
-	let XFoo = document.registerElement('x-foo', {
+	document.registerElement('x-foo', {
 	  prototype: proto
 	});
 	</script>
 </head>
 <body>
-<x-foo></x-foo>
+<x-foo name="Emil"></x-foo>
+<x-foo name="Eric"></x-foo>
+
 </body>
 </html>
