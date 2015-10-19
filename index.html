@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	'use strict'
+	let proto = Object.create(HTMLElement.prototype);
+	proto.name = 'Custom Element';
+	
+	proto.createdCallback = function() {
+	  console.log('Hi! I am created! ');
+	};
+
+	let XFoo = document.registerElement('x-foo', {
+  prototype: proto
+});
+	</script>
+</head>
+<body>
+<x-foo></x-foo>
+</body>
+</html>
