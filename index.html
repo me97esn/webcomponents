@@ -9,11 +9,19 @@
 	
 	proto.createdCallback = function() {
 	  console.log('Hi! I am created! ');
+
+	  this.innerHTML = `
+	  <div>
+	  hi!
+	  </div>
+	  `
 	};
 
+
+
 	let XFoo = document.registerElement('x-foo', {
-  prototype: proto
-});
+	  prototype: proto
+	});
 	</script>
 </head>
 <body>
