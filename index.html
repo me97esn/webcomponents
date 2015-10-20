@@ -11,11 +11,9 @@
 	proto.createdCallback = function() {
 	  console.log('Hi! I am created! ');
 
-	  this.innerHTML = `
-	  <div>
-	  hi ${this.attributes.name.value}!
-	  </div>
-	  `
+	  let t = document.querySelector('#my-template')
+      var clone = document.importNode(t.content, true);
+      this.appendChild(clone);
 	};
 
 	document.registerElement('x-foo', {
@@ -24,6 +22,11 @@
 	</script>
 </head>
 <body>
+
+<template id="my-template">
+  <p>Nu använder vi html i en template istället :)</p>
+</template>
+
 <x-foo name="Emil"></x-foo>
 <x-foo name="Eric"></x-foo>
 
